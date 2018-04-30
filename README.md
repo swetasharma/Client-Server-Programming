@@ -16,5 +16,7 @@ How can we do this?
 3. Java Ser / DeSer : Class X implements Serializable once you do that you ahe methods that will automatically convert object to bytes 
 4. Interface Definition Language(IDL): Tha main advantage is you can communicate your objects, not just between java processes  but between processes written in other languages like c++ and Python. The disadvantage or the little bit of extra overhead for the developer is that you need to write the interface file. fir example for Protocol Buffer  you need to create something  called a .proto file to essentially mirror your class and define the fields that you want to communicate. if you know for sure that you are only communicating between java processes, then java serialization is a very good way to get started.
 
+Remote Method Invocation (RMI):
+
 
 
