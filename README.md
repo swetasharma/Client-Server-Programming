@@ -18,20 +18,21 @@ How can we do this?
 
 Remote Method Invocation (RMI):
 
-
-
-
 Unicast:
 Boroadcast:
 Multicast:
 
-
-
 Publish-Subscrive Model:
 A higher level pattern for group communication compared to multicast and this is referred as Publish-Subscribe.
-a further generalization of the multicast concept. Inthis pattern, publisher processes add messages to designated topics, and subsriber processes receive those messages by registring on the topics that they are intersted in. A key advantage of of this approach is that publishers  need not be aware of which processes are the subscribers, and vice-versa.A nother advanatage is that it lends otself to very efficeint implementation beacuse it can enable a numnber of communication optimizations, which include batching and topic partitioning across broker nodes. Yet another advantage is improved reliability, beacause broker nodes can replicate messages in a topic, so that if one node hosting a topic fails, the entire publicsh subscribe system cam continue execution with another node that contains a copy of all messages in that topic.
+a further generalization of the multicast concept.
+In this pattern, publisher processes add messages to designated topics, and subsriber processes receive those messages by registring on the topics that they are intersted in i.e. Producers are adding messgaes to a topic and the consumers are reading messgaes from topic.
+This lends to very efficient implementations because what the underlying ntework infrastructure can do is it can do baching. That is instead of sending messgaes one at a time, it groups them together. and also the implementation of all this infrastructure can be spread across large numbersof noded in a data center that are referred to as brokers and they can also partition the topics among themselves to allow higher throughput and performance.
 
-To become a publisher, a process simply needs to create a KafkaProducer object. and use it to perform send() operations to designated topics. Likewise to become a consumer, a process needs to create a KafkaConsumer object, whicj can then  be used to subscribe to topics of interest. The consumer then performs  repeated poll() operations, each of which returns a batch of messages from the requested topics. Kafka 
+A key advantage of of this approach is that publishers  need not be aware of which processes are the subscribers, and vice-versa.A nother advanatage is that it lends otself to very efficeint implementation beacuse it can enable a numnber of communication optimizations, which include batching and topic partitioning across broker nodes. Yet another advantage is improved reliability, beacause broker nodes can replicate messages in a topic, so that if one node hosting a topic fails, the entire publicsh subscribe system cam continue execution with another node that contains a copy of all messages in that topic.
+
+To become a publisher, a process simply needs to create a KafkaProducer object. and use it to perform send() operations to designated topics. Likewise to become a consumer, a process needs to create a KafkaConsumer object, whicj can then  be used to subscribe to topics of interest. The consumer then performs  repeated poll() operations, each of which returns a batch of messages from the requested topics. Kafka is commonly used as to produce input for, or receieve output from, MapReduce systems Such as Hadoop or Spark. 
+
+Implement file server using Sockets:
 
 
 
