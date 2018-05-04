@@ -32,6 +32,8 @@ A key advantage of of this approach is that publishers  need not be aware of whi
 
 To become a publisher, a process simply needs to create a KafkaProducer object. and use it to perform send() operations to designated topics. Likewise to become a consumer, a process needs to create a KafkaConsumer object, whicj can then  be used to subscribe to topics of interest. The consumer then performs  repeated poll() operations, each of which returns a batch of messages from the requested topics. Kafka is commonly used as to produce input for, or receieve output from, MapReduce systems Such as Hadoop or Spark. 
 
+
+How we can use sockets to implement a basic server.
 Implement file server using Sockets:
 Usually you avoid infinite loops but in server programs, you often have a spin loop that spins repeatedly to accept requests.
 1. Accept the socket.
@@ -39,6 +41,14 @@ Usually you avoid infinite loops but in server programs, you often have a spin l
 3 Based on that create inputstreamreader them we can also get bufferreader from the ImoutStreamReader, once we have that we can start    reading request
 4. Read the first line and check if its a GET request for a file, make sure that the line is not null and the line starts with GET
 5. Create a full path and concatenate with the path in the GET operation and now we are ready to process the file that we need. to do so we have to create the output stream based on the socket.
+6. We cam create a new printwriter for the output stream.
+7.check ifthe path we constructeed is a proper filea and the write the contents of the file.
+8. Print 404 error message if the file was not found.
+
+Implementing web servers is easy. how to get started using basic socket APIs and this will give you foundation to implement web servers
+in the future for cloud computing.
+
+
 
 
 
