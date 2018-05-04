@@ -49,6 +49,25 @@ Implementing web servers is easy. how to get started using basic socket APIs and
 in the future for cloud computing.
 
 
+Distributed Parallelism:
+Collection of nodes referred to as cluster. Use this collection of nodes thats referred to as cluster, as a single parallel computer.
+And one of the biggest challenges that arises when you try to do something like this, is that of data distribution.
+each fof these nodes has a local memory but if you want to use multiple nodes as one computer we have a logical view of data structure that spans multiple nodes. Logical view which is also referred to as Global view.
+
+
+
+we have same program running on all nodes
+
+point to point communication:
+Non-Blocking communication:
+
+
+
+
+
+
+
+
 
 
 
